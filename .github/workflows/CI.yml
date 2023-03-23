@@ -1,0 +1,58 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the "master" branch
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+    
+  workflow_dispatch:
+    
+env:
+  PATH_TO_RING: /opt/1C/1CE/components/1c-enterprise-ring-0.11.10+2-x86_64
+  PATH_TO_IBCMD: /opt/1cv8/x86_64/8.3.22.1750
+
+  # Allows you to run this workflow manually from the Actions tab
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout
+        uses: actions/checkout@v3.4.0
+      - name: Conver to XML
+        run: $PATH_TO_RING/ring edt workspace export --project $GITHUB_WORKSPACE --configuration-files $RUNNER_TEMP/cf_xml --workspace-location $RUNNER_TEMP
+      - name: Compile 
+        run: |
+          $PATH_TO_IBCMD/ibcmd server config init --db-path=$RUNNER_TEMP/file-db --name=docsIB --out=$RUNNER_TEMP/file-db.yml
+          $PATH_TO_IBCMD/ibcmd infobase create --config=$RUNNER_TEMP/file-db.yml
+          $PATH_TO_IBCMD/ibcmd infobase config import -c $RUNNER_TEMP/file-db.yml $RUNNER_TEMP/cf_xml
+          $PATH_TO_IBCMD/ibcmd infobase config save -c $RUNNER_TEMP/file-db.yml $RUNNER_TEMP/${{ github.event.repository.name }}.cf
+      - name: Set env
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+        if: startsWith(github.ref, 'refs/tags/v')
+      - uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.repository.name }}_$RELEASE_VERSION.cf
+          path: $RUNNER_TEMP/${{ github.event.repository.name }}.cf
+        if: startsWith(github.ref, 'refs/tags/v')
+      
+      # Runs a single command using the runners shell
+      #- name: Run a one-line script 
+      #  run: env LOGOS_CONFIG=logger.rootLogger=DEBUG vrunner edt-validate --workspace-location=$RUNNER_TEMP --project-list=$GITHUB_WORKSPACE --validation-result=$GITHUB_WORKSPACE/out/validation.txt --junitpath $GITHUB_WORKSPACE/out/test-result.xml
+      #
+      #- name: Test Summary
+      #  uses: test-summary/action@v2
+      #  with:
+      #    paths: "out/test-result.xml"
+      #  if: always()

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:SessionParameter xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="29732ecd-f430-476b-9b92-5b1de7bd74db">
+  <name>ТР_ИдентификаторСессии</name>
+  <synonym>
+    <key>ru</key>
+    <value>Идентификатор сессии</value>
+  </synonym>
+  <type>
+    <types>String</types>
+    <stringQualifiers>
+      <length>50</length>
+    </stringQualifiers>
+  </type>
+</mdclass:SessionParameter>

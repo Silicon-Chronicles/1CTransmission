@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Configuration xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="31bf53bf-8139-483d-8eaa-4b6cf103165d">
+  <name>transmission</name>
+  <synonym>
+    <key>ru</key>
+    <value>Transmission</value>
+  </synonym>
+  <containedObjects classId="9cd510cd-abfc-11d4-9434-004095e12fc7" objectId="1cfdbb1b-0556-45c8-9f64-edd1fcab3c90"/>
+  <containedObjects classId="9fcd25a0-4822-11d4-9414-008048da11f9" objectId="03996c46-7ee3-407d-b0e4-2e8d64c74d7b"/>
+  <containedObjects classId="e3687481-0a87-462c-a166-9f34594f9bba" objectId="1553ede2-980d-4d36-8f4c-80958fb7146f"/>
+  <containedObjects classId="9de14907-ec23-4a07-96f0-85521cb6b53b" objectId="e8985bd3-5ef9-4074-a381-cb1e3825c089"/>
+  <containedObjects classId="51f2d5d8-ea4d-4064-8892-82951750031e" objectId="c2835896-b7db-4b5f-b6db-392bef390eac"/>
+  <containedObjects classId="e68182ea-4237-4383-967f-90c1e3370bc7" objectId="8cc123c4-f3de-4a83-b433-f288b1a35875"/>
+  <containedObjects classId="fb282519-d103-4dd3-bc12-cb271d631dfc" objectId="9acdb46e-80a9-4548-b033-d8ff94ada99a"/>
+  <defaultRunMode>ManagedApplication</defaultRunMode>
+  <usePurposes>PersonalComputer</usePurposes>
+  <scriptVariant>Russian</scriptVariant>
+  <usedMobileApplicationFunctionalities>
+    <functionality>
+      <use>true</use>
+    </functionality>
+    <functionality>
+      <functionality>OSBackup</functionality>
+      <use>true</use>
+    </functionality>
+  </usedMobileApplicationFunctionalities>
+  <defaultLanguage>Language.Русский</defaultLanguage>
+  <dataLockControlMode>Managed</dataLockControlMode>
+  <objectAutonumerationMode>NotAutoFree</objectAutonumerationMode>
+  <modalityUseMode>DontUse</modalityUseMode>
+  <synchronousPlatformExtensionAndAddInCallUseMode>DontUse</synchronousPlatformExtensionAndAddInCallUseMode>
+  <compatibilityMode>8.3.22</compatibilityMode>
+  <languages uuid="ffb1ec31-3811-481e-ad2e-0288266c81d7">
+    <name>Русский</name>
+    <synonym>
+      <key>ru</key>
+      <value>Русский</value>
+    </synonym>
+    <languageCode>ru</languageCode>
+  </languages>
+  <sessionParameters>SessionParameter.ТР_ИдентификаторСессии</sessionParameters>
+  <commonModules>CommonModule.КоннекторHTTP</commonModules>
+  <commonModules>CommonModule.Торрент</commonModules>
+  <dataProcessors>DataProcessor.КлиентTransmission</dataProcessors>
+</mdclass:Configuration>
