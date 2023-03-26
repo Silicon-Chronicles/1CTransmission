@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mdclass:Constant xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:core="http://g5.1c.ru/v8/dt/mcore" xmlns:mdclass="http://g5.1c.ru/v8/dt/metadata/mdclass" uuid="f7753406-0638-41ed-ab40-560c090d8e3e">
+  <producedTypes>
+    <managerType typeId="11822c3e-3398-49b8-8a97-1baf59cb8573" valueTypeId="c3c51248-663a-42ab-b039-7c73106bef24"/>
+    <valueManagerType typeId="cc9c9aa8-52b8-43b6-ab0c-c303cb1457da" valueTypeId="f275a2e4-f2cb-42ca-bc64-dcf58f76c0b3"/>
+    <valueKeyType typeId="002d0933-9b48-46e1-97a2-36cbcdc4e2be" valueTypeId="68310125-bdd6-4edd-8c81-194e9d8ae879"/>
+  </producedTypes>
+  <name>ПодключениеПоУмолчанию</name>
+  <synonym>
+    <key>ru</key>
+    <value>Подключение по умолчанию</value>
+  </synonym>
+  <type>
+    <types>CatalogRef.НастройкиПодключения</types>
+  </type>
+  <useStandardCommands>true</useStandardCommands>
+  <minValue xsi:type="core:UndefinedValue"/>
+  <maxValue xsi:type="core:UndefinedValue"/>
+  <dataLockControlMode>Managed</dataLockControlMode>
+</mdclass:Constant>

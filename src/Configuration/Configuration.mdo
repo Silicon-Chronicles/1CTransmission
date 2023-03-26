@@ -39,7 +39,13 @@
     <languageCode>ru</languageCode>
   </languages>
   <sessionParameters>SessionParameter.ТР_ИдентификаторСессии</sessionParameters>
+  <sessionParameters>SessionParameter.ТР_ТекущиеНастройки</sessionParameters>
   <commonModules>CommonModule.КоннекторHTTP</commonModules>
   <commonModules>CommonModule.Торрент</commonModules>
+  <commonModules>CommonModule.ТоррентОбщегоНазначения</commonModules>
+  <commonModules>CommonModule.ТоррентПоляЗапросов</commonModules>
+  <commonModules>CommonModule.ТоррентСлужебный</commonModules>
+  <constants>Constant.ПодключениеПоУмолчанию</constants>
+  <catalogs>Catalog.НастройкиПодключения</catalogs>
   <dataProcessors>DataProcessor.КлиентTransmission</dataProcessors>
 </mdclass:Configuration>
