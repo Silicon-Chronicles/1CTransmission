@@ -47,12 +47,3 @@ jobs:
           path: $RUNNER_TEMP/${{ github.event.repository.name }}.cf
         if: startsWith(github.ref, 'refs/tags/v')
       
-      # Runs a single command using the runners shell
-      #- name: Run a one-line script 
-      #  run: env LOGOS_CONFIG=logger.rootLogger=DEBUG vrunner edt-validate --workspace-location=$RUNNER_TEMP --project-list=$GITHUB_WORKSPACE --validation-result=$GITHUB_WORKSPACE/out/validation.txt --junitpath $GITHUB_WORKSPACE/out/test-result.xml
-      #
-      #- name: Test Summary
-      #  uses: test-summary/action@v2
-      #  with:
-      #    paths: "out/test-result.xml"
-      #  if: always()
